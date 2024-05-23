@@ -1,13 +1,18 @@
-<script setup lang="ts">
-import { RouterView } from "vue-router";
-import NavBar from "./components/NavBar.vue";
-</script>
-
 <template>
   <v-app>
-    <NavBar />
-    <RouterView />
+    <Navbar />
+    <div class="main-content container">
+      <router-view />
+    </div>
   </v-app>
 </template>
 
-<style scoped></style>
+<script setup>
+import Navbar from "./components/NavBar.vue";
+</script>
+
+<style>
+.main-content {
+  padding-top: 64px; /* Adjust this value based on the height of your navbar */
+}
+</style>
