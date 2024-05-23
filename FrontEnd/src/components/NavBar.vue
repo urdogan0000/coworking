@@ -1,33 +1,23 @@
 <template>
-  <nav class="bg-gray-800">
-    <div class="flex space-x-5 justify-center">
-      <RouterLink
-        to="/"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-        >Home</RouterLink
-      >
-      <RouterLink
-        to="/about"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-        >About</RouterLink
-      >
-      <RouterLink
-        to="/contact"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+  <v-app-bar app color="primary" dark>
+    <v-toolbar-title class="text-h5">MyApp</v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-btn>
+      <RouterLink to="/" class="text-white no-underline">Home</RouterLink>
+    </v-btn>
+    <v-btn>
+      <RouterLink to="/about" class="text-white no-underline">About</RouterLink>
+    </v-btn>
+    <v-btn>
+      <RouterLink to="/contact" class="text-white no-underline"
         >Contact</RouterLink
       >
-    </div>
-  </nav>
+    </v-btn>
+  </v-app-bar>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-
-const isMenuOpen = ref(false);
-
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value;
-};
+import { RouterLink } from "vue-router";
 </script>
 
 <style scoped>
