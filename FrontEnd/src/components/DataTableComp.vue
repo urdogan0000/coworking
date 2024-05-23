@@ -1,45 +1,43 @@
 <template>
-
-    <v-data-table-server
-      v-model:items-per-page="itemsPerPage"
-      :headers="headers"
-      :items="items"
-      :items-length="totalItems"
-      :loading="loading"
-      :search="search"
-      item-value="name"
-      @update:options="loadItems"
-    >
-      <template v-slot:[`item.actions`]="{ item }">
-        <v-btn icon @click="onEdit(item)">
-          <v-icon>mdi-pencil</v-icon>
-        </v-btn>
-      </template>
-      <template v-slot:tfoot>
-        <tr>
-          <td>
-            <v-text-field
-              v-model="nameFilter"
-              class="ma-2"
-              density="compact"
-              placeholder="Search name..."
-              hide-details
-            ></v-text-field>
-          </td>
-          <td>
-            <v-text-field
-              v-model="caloriesFilter"
-              class="ma-2"
-              density="compact"
-              placeholder="Minimum calories"
-              type="number"
-              hide-details
-            ></v-text-field>
-          </td>
-        </tr>
-      </template>
-    </v-data-table-server>
- 
+  <v-data-table-server
+    v-model:items-per-page="itemsPerPage"
+    :headers="headers"
+    :items="items"
+    :items-length="totalItems"
+    :loading="loading"
+    :search="search"
+    item-value="name"
+    @update:options="loadItems"
+  >
+    <template v-slot:[`item.actions`]="{ item }">
+      <v-btn icon @click="onEdit(item)">
+        <v-icon>mdi-pencil</v-icon>
+      </v-btn>
+    </template>
+    <template v-slot:tfoot>
+      <tr>
+        <td>
+          <v-text-field
+            v-model="nameFilter"
+            class="ma-2"
+            density="compact"
+            placeholder="Search name..."
+            hide-details
+          ></v-text-field>
+        </td>
+        <td>
+          <v-text-field
+            v-model="caloriesFilter"
+            class="ma-2"
+            density="compact"
+            placeholder="Minimum calories"
+            type="number"
+            hide-details
+          ></v-text-field>
+        </td>
+      </tr>
+    </template>
+  </v-data-table-server>
 </template>
 
 <script setup lang="ts">

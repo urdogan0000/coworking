@@ -1,11 +1,15 @@
 <template>
   <div class="container flex flex-col items-center ml-10">
-    <div class="flex m-4 justify-end w-full  border-2 p-2 ">
-      <v-btn class="rounded-2xl" prepend-icon="$vuetify" @click="showForm = true">
+    <div class="flex m-4 justify-end w-full border-2 p-2">
+      <v-btn
+        class="rounded-2xl"
+        prepend-icon="$vuetify"
+        @click="showForm = true"
+      >
         <span>Add</span>
       </v-btn>
     </div>
-    <div class="w-full ">
+    <div class="w-full">
       <DataTable :fetchData="fetchData" :headers="headers" :onEdit="editItem" />
     </div>
     <v-dialog v-model="showForm" max-width="500px">
