@@ -21,13 +21,13 @@
           <v-form ref="form" v-model="valid" lazy-validation>
             <v-text-field
               v-model="newItem.name"
-              :rules="[(v) => !!v || 'Name is required']"
+              :rules="[(v: any) => !!v || 'Name is required']"
               label="Name"
               required
             ></v-text-field>
             <v-text-field
               v-model="newItem.calories"
-              :rules="[(v) => !!v || 'Calories is required']"
+              :rules="[(v: any) => !!v || 'Calories is required']"
               label="Calories"
               type="number"
               required
