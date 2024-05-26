@@ -33,11 +33,9 @@ export interface FetchDataResult<T> {
 }
 
 // Example interface for a dessert item
-export interface Dessert {
+export interface Resource {
   name: string;
-  calories: number;
-  fat: number;
-  carbs: number;
-  protein: number;
-  iron: string;
+  description: string;
+  canRent: boolean;
+  type: string;
 }
